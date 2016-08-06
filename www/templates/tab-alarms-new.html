@@ -1,0 +1,50 @@
+<ion-view view-title="Alarms">
+  <ion-content>
+    <div class="list">
+      <form name="newAlarm">
+        <label class="item item-input">
+          <input type="text" name="name" required  ng-model="alarm.name" placeholder="Alarm name">
+        </label>
+
+        <label class="item item-input">
+          <input type="text" required  ng-model="alarm.text" placeholder="Alarm mes">sage
+        </label>
+
+        <!--
+        <label class="item item-input">
+        <input type="text" required  ng-model="alarm.image" placeholder="Immagine">
+      </label>
+    -->
+
+    <label class="item item-input">
+      <div class="input-label">
+        When?
+      </div>
+      <input type="datetime-local" ng-model="time.ringDate"  min="{{minDatetimeLocal | date:'yyyy-MM-ddTHH:mm'}}" required>
+    </label>
+
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Snoozing time
+      </div>
+
+      <select ng-model="time.snoozeTime"  required>
+        <option value="5000" ng-selected="1">in 5 secs</option>
+        <option value="10000">in 10 secs</option>
+        <option value="60000">in 1 min</option>
+      </select>
+    </label>
+
+    <!-- validation not working in Android -->
+
+    <!--
+    <button ng-click="save()" ng-class="!newAlarm.$valid ? 'disabled' : '' " class="button button-full button-positive">Save</button>
+  -->
+
+  <button ng-click="save()" class="button button-full button-positive">Save</button>
+</form>
+
+</div>
+</ion-content>
+
+</ion-view>
