@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('starter.services', [])
 
 .factory('Alarms', function($interval,$filter,Alarmer,$rootScope) {
@@ -10,11 +12,10 @@ angular.module('starter.services', [])
 
     angular.forEach(chats, function(value, key) {
 
-
       //if this alarm is already active...
       if(value.active === 1){
 
-        console.log('It sound in '+Math.abs($filter('number')((now - value.date)/1000, 0)) +' seconds');
+        console.log('It sound in '+ Math.abs($filter('number')((now - value.date)/1000, 0)) +' seconds');
 
         if( now > value.date){
           value.active = 0;
@@ -104,10 +105,7 @@ angular.module('starter.services', [])
 
   return {
     drin:drin
-  }
-
-
-
+  };
 
 
 });

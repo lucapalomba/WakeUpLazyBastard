@@ -1,8 +1,8 @@
+'use strict';
+
 angular.module('starter.controllers', [])
 
-.controller('HelloCtrl', function() {
-
-})
+.controller('HelloCtrl', function() {})
 
 .controller('AlarmsCtrl', function($scope, Alarms) {
   // With the new view caching in Ionic, Controllers are only called
@@ -25,7 +25,7 @@ angular.module('starter.controllers', [])
 
   $scope.minDatetimeLocal = Date.now() + 60000;
 
-  $scope.time = {snoozeTime: 5000,ringDate: new Date($filter('date')(Date.now() + 60000, 'short'))}
+  $scope.time = {snoozeTime: 5000,ringDate: new Date($filter('date')(Date.now() + 60000, 'short'))};
 
   $scope.save = function(){
 
@@ -37,10 +37,10 @@ angular.module('starter.controllers', [])
     var done = Alarms.addnew($scope.alarm);
 
     if(done){
-      $state.go('tab.alarms')
+      $state.go('tab.alarms');
     }
 
-  }
+  };
 
 
 
@@ -66,23 +66,24 @@ angular.module('starter.controllers', [])
   //register music
   var isWebView = ionic.Platform.isWebView();
   if(isWebView){
-    var my_media = new Media('/android_asset/www/music/pop.mp3',null,null);
+    var myMedia = new Media('/android_asset/www/music/pop.mp3',null,null);
   }
 
   $scope.hideModal = function() {
     $rootScope.modal.hide();
-    if(isWebView){my_media.stop(); }
+    if(isWebView){myMedia.stop(); }
   };
 
   $scope.snoozeModal = function (alarmId,snoozeTime){
     Alarms.snooze(alarmId,snoozeTime);
     $rootScope.modal.hide();
-  }
+    if(isWebView){myMedia.stop(); }
+  };
 
   $rootScope.$on('alarm:show', function(e,m) {
     $rootScope.modal.show();
     $scope.alarm.dataAlarm = m;
-    if(isWebView){my_media.play(); }
+    if(isWebView){myMedia.play(); }
   });
 
   $rootScope.$on('alarm:show', function() {});
