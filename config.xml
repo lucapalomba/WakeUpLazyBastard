@@ -2,7 +2,7 @@
 <widget id="com.ionicframework.wulb238284" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Wulb</name>
   <description>
-        A simple alarm Test App made with Ionic & Ionic Lab
+        A simple alarm Test App made with Ionic and Ionic Lab
     </description>
   <author email="luca.palomba.associati@gmail.com" href="http://lucapalomba.wordpress.com/">
       Luca Palomba
