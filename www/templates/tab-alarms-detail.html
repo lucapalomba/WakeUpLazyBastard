@@ -3,11 +3,11 @@
     <div class="list">
       <form name="newAlarm">
         <label class="item item-input">
-          <input type="text" name="name" required  ng-model="alarmdetail.alarm.name" placeholder="{{'alarmNamePlaceholder' | translate}}">
+          <input type="text" name="name" required  ng-disabled="alarmdetail.isDisabled"   ng-model="alarmdetail.alarm.name" placeholder="{{'alarmNamePlaceholder' | translate}}">
         </label>
 
         <label class="item item-input">
-          <input type="text" required  ng-model="alarmdetail.alarm.text" placeholder="{{'alarmNamePlaceholder' | translate}}">
+          <input type="text" required  ng-disabled="alarmdetail.isDisabled"   ng-model="alarmdetail.alarm.text" placeholder="{{'alarmNamePlaceholder' | translate}}">
         </label>
 
         <!--
@@ -20,7 +20,7 @@
       <div class="input-label">
         <p translate="{{ 'when' }}"></p>
       </div>
-      <input type="datetime-local" ng-model="alarmdetail.alarm.date" required>
+      <input type="datetime-local"  ng-disabled="alarmdetail.isDisabled"  ng-model="alarmdetail.alarm.date" required>
     </label>
 
     <label class="item item-input item-select">
@@ -28,14 +28,14 @@
         <p translate="{{ 'snoozing' }}"></p>
       </div>
 
-      <select ng-model="alarmdetail.alarm.snoozeTime"  required>
-        <option value="5000" ng-selected="1">{{'snoozingTime.fiveSec' | translate}}</option>
-        <option value="10000">{{'snoozingTime.tenSec' | translate}}</option>
-        <option value="60000">{{'snoozingTime.oneMin' | translate}}</option>
+      <select ng-disabled="alarmdetail.isDisabled" required>
+        <option value="5000" ng-selected="{{alarmdetail.alarm.snoozeTime == 5000 ? true : false}}">{{'snoozingTime.fiveSec' | translate}}</option>
+        <option value="10000" ng-selected="{{alarmdetail.alarm.snoozeTime == 10000 ? true : false}}">{{'snoozingTime.tenSec' | translate}}</option>
+        <option value="60000" ng-selected="{{alarmdetail.alarm.snoozeTime == 60000 ? true : false}}">{{'snoozingTime.oneMin' | translate}}</option>
       </select>
     </label>
 
-  <button ng-click="save()" class="button button-full button-positive">{{'saveButton' | translate }}</button>
+  <button ng-click="save()"  ng-disabled="alarmdetail.isDisabled" class="button button-full button-positive">{{'saveButton' | translate }}</button>
   </form>
 
 </div>

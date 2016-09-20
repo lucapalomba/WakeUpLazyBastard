@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
   //});
 
 
-//Get all Alarms
+  //Get all Alarms
   $scope.alarms = Alarms.all();
 
 })
@@ -50,8 +50,11 @@ angular.module('starter.controllers', [])
 .controller('AlarmsDetailCtrl', function($scope,Alarms,$stateParams,$filter) {
 
   $scope.alarmdetail = {};
+
+  $scope.alarmdetail.isDisabled = true;
   $scope.alarmdetail.alarm = Alarms.get($stateParams.alarmId);
   $scope.alarmdetail.alarm.date = new Date($filter('date')( $scope.alarmdetail.alarm.date, 'short'));
+  console.log($scope.alarmdetail.alarm);
 
 })
 
