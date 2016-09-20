@@ -1,7 +1,9 @@
+<!-- Template: Show all alarms -->
+
 <ion-view view-title="Alarms">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="alarm in alarms track by $index" type="item-text-wrap" href="#/tab/alarms/{{alarm.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="alarm in alarms track by $index" type="item-text-wrap"  href="#/tab/alarms/{{alarm.id}}">
         <!-- <img ng-src="{{alarm.image}}"> -->
         <i ng-class="alarm.active ?  'ion-ios-bell'  : 'ion-ios-bell-outline' " class="ion-ios-bell"></i>
         <h2>{{alarm.name}}</h2>
@@ -11,6 +13,6 @@
     </ion-list>
   </ion-content>
   <ion-footer-bar align-title="center" class="bar-balanced">
-    <a href="#/tab/newalarm" class="button button-balanced">New Alarm</a>
+    <a href="#/tab/newalarm" class="button button-balanced">{{'newAlarmButton' | translate}}</a>
   </ion-footer-bar>
 </ion-view>

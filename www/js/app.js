@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
 .run(function($ionicPlatform,$rootScope,$ionicModal) {
   $ionicPlatform.ready(function() {
@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$translateProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -104,5 +104,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/hello');
+
+  $translateProvider.translations('en', {
+    hello: 'Hello! Not news for now.<br> Have a Good life!',
+    newAlarmButton: 'New Alarm',
+    alarmNamePlaceholder: 'Alarm name',
+    alarmMessagePlaceHolder : 'Leave a message for this alarm',
+    when: 'When?',
+    snoozing: 'Snoozing in:',
+    snoozingTime:{
+      fiveSec: '5 seconds',
+      tenSec:'10 seconds',
+      oneMin:'one minute'
+    },
+    saveButton: 'Save this alarm',
+    modalOkButton:'Ok, i wake up!',
+    modalSnoozeButton:'SNOOZE!'
+  });
+  $translateProvider.translations('it', {
+    hello: 'Ciao, non ci sono novità per ora<br> Stammi bene!'
+  });
+  $translateProvider.preferredLanguage('en');
+  $translateProvider.fallbackLanguage('en');
+
 
 });

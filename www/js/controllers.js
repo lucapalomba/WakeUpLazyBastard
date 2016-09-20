@@ -13,10 +13,9 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+
+//Get all Alarms
   $scope.alarms = Alarms.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
 
 })
 

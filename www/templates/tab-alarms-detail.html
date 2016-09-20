@@ -3,13 +3,11 @@
     <div class="list">
       <form name="newAlarm">
         <label class="item item-input">
-          <input type="text" name="name" required  ng-model="alarmdetail.alarm.name" placeholder="Nomina la sveglia">
+          <input type="text" name="name" required  ng-model="alarmdetail.alarm.name" placeholder="{{'alarmNamePlaceholder' | translate}}">
         </label>
 
-        <!-- TODO  more detail -->
-
         <label class="item item-input">
-          <input type="text" required  ng-model="alarmdetail.alarm.text" placeholder="E metti un messaggio">
+          <input type="text" required  ng-model="alarmdetail.alarm.text" placeholder="{{'alarmNamePlaceholder' | translate}}">
         </label>
 
         <!--
@@ -20,24 +18,24 @@
 
     <label class="item item-input">
       <div class="input-label">
-        When?
+        <p translate="{{ 'when' }}"></p>
       </div>
       <input type="datetime-local" ng-model="alarmdetail.alarm.date" required>
     </label>
 
     <label class="item item-input item-select">
       <div class="input-label">
-        Snooze time
+        <p translate="{{ 'snoozing' }}"></p>
       </div>
 
       <select ng-model="alarmdetail.alarm.snoozeTime"  required>
-        <option value="5000" ng-selected="1">in 5 secs</option>
-        <option value="10000">in 10 secs</option>
-        <option value="60000">in 1 min</option>
+        <option value="5000" ng-selected="1">{{'snoozingTime.fiveSec' | translate}}</option>
+        <option value="10000">{{'snoozingTime.tenSec' | translate}}</option>
+        <option value="60000">{{'snoozingTime.oneMin' | translate}}</option>
       </select>
     </label>
 
-
+  <button ng-click="save()" class="button button-full button-positive">{{'saveButton' | translate }}</button>
   </form>
 
 </div>

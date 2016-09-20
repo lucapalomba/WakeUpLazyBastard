@@ -2,6 +2,7 @@
   "name": "wulb",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.0"
+    "ionic": "driftyco/ionic-bower#1.1.0",
+    "angular-translate": "^2.12.1"
   }
 }

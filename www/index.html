@@ -15,6 +15,8 @@
 <!-- ionic/angularjs js -->
 <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+ <script src="lib/angular-translate/angular-translate.min.js"></script>
+
 <!-- cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
 
@@ -47,8 +49,8 @@ have templates inline in this html file if you'd like).
       <h1>{{alarm.dataAlarm.text }}</h1>
       <div class="padding">
         <div class="list">
-          <button class="button button-block button-positive" ng-click="hideModal()">Ok</button>
-          <button class="button button-block button-positive" ng-click="snoozeModal(alarm.dataAlarm.id,alarm.dataAlarm.snoozeTime)">Snooze</button>
+          <button class="button button-block button-positive" ng-click="hideModal()">{{'modalOkButton' |translate}}</button>
+          <button class="button button-block button-positive" ng-click="snoozeModal(alarm.dataAlarm.id,alarm.dataAlarm.snoozeTime)">{{'modalSnoozeButton' |translate}}</button>
         </div>
       </ion-content>
     </div>

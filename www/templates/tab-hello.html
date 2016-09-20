@@ -1,8 +1,9 @@
 <ion-view view-title="Hello">
   <ion-content>
-    <div ng-click="apriti()" class="card">
+    <div ng-click="openModal()" class="card">
       <div class="item item-text-wrap">
-        Hello! Not news for now.<br> Have a Good life!
+        <!-- in this case you must use interpolation for using html instead a string -->
+        <p translate="{{ 'hello' }}"></p>
       </div>
     </div>
   </ion-content>
