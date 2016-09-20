@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.wulb238284" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>wulb</name>
+  <name>Wulb</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A simple alarm Test App made with Ionic & Ionic Lab
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="luca.palomba.associati@gmail.com" href="http://lucapalomba.wordpress.com/">
+      Luca Palomba
     </author>
   <content src="index.html"/>
   <access origin="*"/>
