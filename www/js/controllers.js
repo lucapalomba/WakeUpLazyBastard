@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HelloCtrl', function($rootScope,$scope,$interval) {
+.controller('HelloCtrl', function() {
 
 })
 
